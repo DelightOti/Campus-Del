@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- head
+
+    Purpose:
+    - Title used here shows up in the browser tab
+    - Link to the favicon (small image that appears in the browser tab)
+    - Link to the CSS file (used to style the webpage)
+
+    When To Modify:
+    - [ ] Project 2 (REQUIRED FEATURE) 
+    - [ ] Project 2 (STRETCH FEATURE) (favicon)
+    - [ ] Any time after
+    -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Sailor's Summit</title>
+    <link rel="icon" href="./img/sailorslogo.png" >
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <div class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Events">Schedule</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><button id="theme-button">Toggle Dark Mode</button></li>
+        </ul>
+    </div>
+
+    <!-- Header -->
+    <div class="header-container" id="home">
+        <div class="header-item">
+            <img id="header-img" src="./img/sailorslogo.png" alt="Sailor's Logo"/>
+        </div>
+        <div class="header-item"> 
+            <h1>Sailor's Summit</h1>
+            <h2>Where Crews Are Born and Legends Begin.</h2>
+            <button class="header-button" type="button">Set Sail</button>
+            <button class="header-button" type="button">Join a Crew</button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <h2 id="About">About the Event</h2>
+    <div class="about-container">
+    <iframe src="https://www.youtube.com/embed/5T1xsZVD-gc" title="About the Event Video" allowfullscreen></iframe>
+    <p>Ahoy there, pirate lovers! Looking to join a crew? 
+        Whether you're after the hottest, the baddest, the 
+        weakest, or the strongest (hey, no judgment — whatever floats your boat), we've got it all.
+        The seas are calling... so what are you waiting for? 
+        Sign up now at Sailor’s Summit — your journey starts here.
+    </p>
+    </div>
+
+    <div class="whatto">
+    <h3 id="">What to Expect</h3>
+    <ul>
+        <li><i>Cool Stuff</i></li>
+        <li><i>Adventure</i></li>
+        <li><i>Dreams Fulfilled</i></li>
+    </ul>
+    </div>
+
+    <!-- Event Schedule Section -->
+    <h2 id="Events">Event Schedule</h2>
+
+    <div class="schedule-container">
+        <div class="schedule-item">
+            <img alt="a snippet of the ships that will be at the summit" src="https://i.ytimg.com/vi/UFgSUH-PhaY/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGDIgVSh_MA8=&rs=AOn4CLDTvEVa46W3-h3TUV2ShctF6VqbVw" width="350" height="200"/>
+            <h3>Meet The Ships</h3>
+            <p>The sea’s calling, and so are the crews. Each ship comes with its own story, vibe, and dream. Explore the fleet, learn their missions, and decide which one you’d sail with. The first step to becoming a legend? Picking the right ship to sail on.</p>
+        </div>
+
+        <div class="schedule-item">
+            <img alt="description of a person proving his worth" src="./img/zoroimage.png" height="200" width="350"/>
+            <h3>Prove Your Worth</h3>
+            <p>You’ve seen the ships, now it’s time to show you belong. Whether you’re a strategist, a wild card, or just have main character energy, this is where you put your name on the map. Show off your skills, answer the call, and earn your place in the crew.</p>
+        </div>
+
+        <div class="schedule-item">
+            <img alt="description of people partying pirate style" src="./img/onepiece_partyscene.avif" height="200" width="350"/>
+            <h3>Party Time</h3>
+            <p>You joined a crew. You faced the test. Now it’s time to do what pirates do best, celebrate! Kick back, vibe with your new friends, and enjoy the victory. After all, no true adventure ends without a party.</p>
+        </div>
+    </div>
+
+    <!-- RSVP Section -->
+    <div id="rsvp">
+        <h2>RSVP</h2>
+        <p id="rsvp-count">⭐ 3 people have RSVP'd to this event!</p>
+        <div class="rsvp-container">
+            <div class="rsvp-para">
+                <p>Ready to join your crew and sail into legend? RSVP now to claim your spot aboard the fleet and meet your future shipmates. Don’t miss the adventure of a lifetime at Sailor’s Summit!</p>
+            </div>
+            <div class="rsvp-participants">
+                <p>🎟️ Luffy from East Blue has RSVP'd.</p>
+                <p>🎟️ Nami from Cocoyasi Village has RSVP'd.</p>
+                <p>🎟️ Usopp from Syrup Village has RSVP'd.</p>
+            </div>
+        </div>
+
+        <!-- RSVP Form -->
+        <div class="form-container" id="rsvp-participants">
+            <form id="rsvp-form" title="rsvp-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required/>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="State">Home State:</label>
+                <input type="text" id="State" name="Home State"  required />
+
+                <button id="rsvp-button">Submit RSVP</button>
+            </form>
+        </div>      
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-container">
+            <div id="modal-item">
+                <p id="modal-text">modaltext yeah</p>
+            </div>
+            <div id="modal-item">
+                <img id="modal-image" src="./img/chopper funny.png" alt="Chopper" width="300" height="200"/>
+            </div>
+            <button id="close-modal-btn" class="close-button">Close</button>
+        </div>
+    </div>
+
+    <!-- Links Section -->
+    <h2 id="links">Links</h2>
+
+    <div class="links-container">
+  <a class="block" href="https://www.thewayofthepirates.com/pirate-life/who-is-who/">
+    <article>
+      <h3>The Way of the Pirates</h3>
+      <p>About the different jobs a pirate can have on a ship</p>
+    </article>
+  </a>
+  <a class="block" href="https://buccaneerblog.com/pirate-recruitment-tactics-from-pressed-to-volunteer-exploration/">
+    <article>
+      <h3>Pirate Recruitment Tactics</h3>
+      <p>About the different ways pirates recruit crew members</p>
+    </article>
+  </a>
+</div>
+
+
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Sailor's Summit</p>
+        <a href="https://Aboutus.com" target="_blank">About Us</a>
+        <a href="https://contactme.com" target="_blank">Contact</a>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

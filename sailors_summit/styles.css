@@ -1,0 +1,378 @@
+/*** Global Fix ***/
+html {
+    background-color: var(--bg-color);
+    scroll-padding-top: 60px;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+}
+
+/*** Typography ***/
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, serif;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+h2#About {
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+a:active {
+    color: red;
+}
+
+a article p {
+    font-size: 14px;
+    color: #666;
+}
+
+/*** Buttons ***/
+button {
+    padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background-color: var(--accent-color-medium);
+  color: white;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+#theme-button {
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+/*** Error Styling ***/
+.error {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+/*** Header ***/
+.header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px 20px;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.header-item:nth-of-type(1),
+.header-item:nth-of-type(2) {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-item:nth-of-type(2) {
+    flex-direction: column;
+    gap: 10px;
+}
+
+#header-img {
+    height: auto;
+    max-height: 160px;
+    width: auto;
+    max-width: 240px;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+/*** Header Button ***/
+.header-button {
+    background-color: #5c46b4;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.header-button:hover {
+    background-color: #315f7d;
+}
+
+/*** Footer ***/
+.footer {
+  background-color: var(--accent-color-darkest);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--accent-color-light);
+}
+.footer a:hover {
+  color: white;
+}
+
+/*** Navbar ***/
+.navbar ul {
+    z-index: 1000;
+    list-style-type: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--accent-color-dark);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    background-color: blueviolet;
+}
+
+/*** RSVP Section ***/
+.rsvp-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    justify-content: space-between;
+}
+
+.rsvp-para {
+    width: 55%;
+    padding-right: 10px;
+}
+
+.rsvp-participants {
+    width: 45%;
+    padding-right: 10px;
+}
+
+/*** Modal ***/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container {
+    padding: 50px;
+    width: 55%;
+    background-color: rgb(182, 176, 222);
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+    font-family: monospace;
+    display: flex;
+}
+
+/*** Dark Mode ***/
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+    color: white;
+}
+
+/*** Color Variables ***/
+:root {
+    --bg-color: #a6a0cf;
+    --text-color: #231942;
+    --bg-color-dark-mode: #3e3377;
+    --text-color-dark-mode: #fff;
+    --accent-color-light: #d2cff5;
+    --accent-color-medium: #684fb5;
+    --accent-color-dark: #482f95;
+    --accent-color-darkest: #231942;
+    --accent-color-green: #28eb76;
+    --error-color: #f8bbd0;
+    --error-color-border: #e63946;
+}
+
+/*** Schedule Section ***/
+.schedule-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+}
+
+.schedule-item {
+    background-color: var(--accent-color-light);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedule-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.schedule-item h3 {
+    margin: 0 0 10px 0;
+    color: var(--accent-color-darkest);
+    font-family: Georgia, serif;
+    text-align: center;
+}
+
+.schedule-item p {
+    margin: 0;
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.page-container {
+    max-width: 1000px;       /* limits content width */
+    margin-left: auto;       /* centers horizontally */
+    margin-right: auto;
+    padding-left: 20px;      /* padding so text doesn’t touch edges on small screens */
+    padding-right: 20px;
+    box-sizing: border-box;  /* include padding inside width */
+}
+
+.about-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto 50px;  /* center container with bottom margin */
+    align-items: flex-start;
+}
+
+.about-container iframe {
+    flex: 1 1 400px;      /* video takes about 400px width, can shrink */
+    height: 225px;        /* 16:9 ratio for 400 width */
+    border: none;
+    border-radius: 8px;
+}
+
+.about-container p {
+    flex: 1 1 400px;      /* paragraph takes remaining space */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    font-family: Arial, sans-serif;
+}
+
+.whatto {
+  max-width: 400px;     /* limit width for better layout */
+  margin: 0 auto;       /* center the whole block */
+  text-align: left;     /* keep bullets and text aligned normally */
+}
+
+#Events {
+  text-align: center;
+}
+
+#rsvp h2,
+#rsvp p {
+  text-align: center;
+}
+
+#rsvp-participants {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+}
+
+#links{
+  text-align:center;
+  margin-left: -55px;
+}
+
+.links-container {
+  display: flex;
+  gap: 40px; /* space between the links */
+  justify-content: center; /* center horizontally */
+  flex-wrap: wrap; /* wrap to new line if screen is small */
+}
+
+
+.close-button {
+  background-color: var(--accent-color-medium);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
