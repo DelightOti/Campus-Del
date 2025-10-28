@@ -17,12 +17,14 @@ const PORT = process.env.PORT || 4000;
 app.use(express.json());
 
 // CORS: allow your Vercel site + local dev (edit the Vercel URL if needed)
+const allowedOrigins = [
+  "http://localhost:5173", // local dev
+  "https://campus-pxokfxbo9n-delight-otis-projects.vercel.app" // your Vercel frontend URL
+];
+
 app.use(
   cors({
-    origin: [
-      'http://localhost:5173',
-      'https://campusdel.vercel.app', // or your actual Vercel domain
-    ],
+    origin: allowedOrigins,
     credentials: true,
   })
 );
