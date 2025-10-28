@@ -1,42 +1,46 @@
 import 'dotenv/config';
-console.log("Env loaded?", Boolean(process.env.MONGODB_URI));
+import express from 'express';
+import cors from 'cors';
+import { connectDB } from './config/db.js';
 
-import express from "express"
-import cors from "cors"
-import { connectDB } from "./config/db.js"
-import foodRouter from "./routes/foodRoute.js"
-import userRouter from "./routes/userRoute.js"
-import 'dotenv/config'
-import cartRouter from "./routes/cartRoute.js"
-import orderRouter from "./routes/orderRoute.js"
+import foodRouter from './routes/foodRoute.js';
+import userRouter from './routes/userRoute.js';
+import cartRouter from './routes/cartRoute.js';
+import orderRouter from './routes/orderRoute.js';
 
+const app = express();
 
+// Use Render's assigned port in production, fallback to 4000 locally
+const PORT = process.env.PORT || 4000;
 
-// app config
-const app = express()
-const port = 4000
-
-// middleware
+// Middleware
 app.use(express.json());
-//can acess the backend from any frontend
-app.use(cors());
 
-//db connection
+// CORS: allow your Vercel site + local dev (edit the Vercel URL if needed)
+app.use(
+  cors({
+    origin: [
+      'http://localhost:5173',
+      'https://campusdel.vercel.app', // or your actual Vercel domain
+    ],
+    credentials: true,
+  })
+);
+
+// DB
 connectDB();
 
-// api endpoints
-app.use("/api/food",foodRouter)
-app.use("/images",express.static('uploads'))
-app.use("/api/user",userRouter)
-app.use("/api/cart",cartRouter)
-app.use("/api/order",orderRouter)
+// Routes
+app.use('/api/food', foodRouter);
+app.use('/images', express.static('uploads'));
+app.use('/api/user', userRouter);
+app.use('/api/cart', cartRouter);
+app.use('/api/order', orderRouter);
 
+app.get('/', (req, res) => {
+  res.send('API Working');
+});
 
-app.get("/",(req,res)=>{
-    res.send("API Working")
-})
-
-app.listen(port, ()=>{
-    console.log(`Server Started on http://localhost:${port}`)
-})
-
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});
