@@ -1,3 +1,6 @@
+import 'dotenv/config';
+console.log("Env loaded?", Boolean(process.env.MONGODB_URI));
+
 import express from "express"
 import cors from "cors"
 import { connectDB } from "./config/db.js"
