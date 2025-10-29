@@ -18,6 +18,7 @@ app.use(express.json());
 
 // CORS: allow your Vercel site + local dev (edit the Vercel URL if needed)
 const allowedOrigins = [
+  "https://campus-del-7b99.vercel.app",
   "http://localhost:5173", // for local dev
   "https://campus-del-git-main-delight-otis-projects.vercel.app", // your main production URL
   "https://campus-pxokfxbo9n-delight-otis-projects.vercel.app", // preview deployment
