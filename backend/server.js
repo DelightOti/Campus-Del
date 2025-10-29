@@ -16,28 +16,40 @@ const PORT = process.env.PORT || 4000;
 // Middleware
 app.use(express.json());
 
-// CORS: allow your Vercel site + local dev (edit the Vercel URL if needed)
+// ✅ Allow these specific origins (add your latest Vercel preview if needed)
 const allowedOrigins = [
-  "https://campus-del-7b99.vercel.app",
-  "http://localhost:5173", // for local dev
-  "https://campus-del-git-main-delight-otis-projects.vercel.app", // your main production URL
-  "https://campus-pxokfxbo9n-delight-otis-projects.vercel.app", // preview deployment
+  "http://localhost:5173",
   "https://campus-del.vercel.app",
-  "https://campus-del-7b99-git-main-delight-otis-projects.vercel.app" // optional: preview build
+  "https://campus-del-7b99.vercel.app",
+  "https://campus-del-git-main-delight-otis-projects.vercel.app",
+  "https://campus-del-7b99-git-main-delight-otis-projects.vercel.app",
+  "https://campus-del-7b99-cbz2y3bpg-delight-otis-projects.vercel.app", // 👈 your current deployment
+  "https://campus-pxokfxbo9n-delight-otis-projects.vercel.app" // older preview
 ];
 
-
+// ✅ Apply CORS before routes
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error(`CORS blocked: ${origin}`));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
 
-// DB
+// ✅ Handle preflight OPTIONS requests globally
+app.options("*", cors());
+
+// ✅ Connect DB
 connectDB();
 
-// Routes
+// ✅ Routes
 app.use('/api/food', foodRouter);
 app.use('/images', express.static('uploads'));
 app.use('/api/user', userRouter);
@@ -45,9 +57,10 @@ app.use('/api/cart', cartRouter);
 app.use('/api/order', orderRouter);
 
 app.get('/', (req, res) => {
-  res.send('API Working');
+  res.send('API Working ✅');
 });
 
+// ✅ Start server
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
 });
