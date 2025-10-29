@@ -22,7 +22,8 @@ const allowedOrigins = [
   "http://localhost:5173", // for local dev
   "https://campus-del-git-main-delight-otis-projects.vercel.app", // your main production URL
   "https://campus-pxokfxbo9n-delight-otis-projects.vercel.app", // preview deployment
-  "https://campus-del.vercel.app"
+  "https://campus-del.vercel.app",
+  "https://campus-del-7b99-git-main-delight-otis-projects.vercel.app" // optional: preview build
 ];
 
 
